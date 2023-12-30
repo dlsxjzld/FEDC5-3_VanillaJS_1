@@ -1,7 +1,7 @@
-import { Header } from './components/index.js'
-import { TodoForm, TodoList, TodoCount } from './components/Todo/index.js'
-import checkNewComponent from './utils/checkNewComponent.js'
-import { localStorage } from './utils/storage/localStorage.js'
+import { Header } from "./components/index.js"
+import { TodoForm, TodoList, TodoCount } from "./components/Todo/index.js"
+import checkNewComponent from "./utils/checkNewComponent.js"
+import { localStorage } from "./utils/storage/localStorage.js"
 
 export default function App({ targetElement, initialState }) {
   // 컴포넌트에 new를 붙이지 않고 쓸 경우 에러가 나도록 방어코드 넣기
@@ -14,7 +14,7 @@ export default function App({ targetElement, initialState }) {
   }
 
   // Header
-  new Header({ targetElement, text: 'Simple Todo List' })
+  new Header({ targetElement, text: "Simple Todo List" })
 
   // TodoForm
   new TodoForm({
@@ -44,7 +44,7 @@ export default function App({ targetElement, initialState }) {
 
       // todo의 isCompleted 값을 토글합니다.
       const nextState = todoList.state.map((todo) =>
-        todo.id === todoId ? { ...todo, isCompleted: !todo.isCompleted } : todo
+        todo.id === todoId ? { ...todo, isCompleted: !todo.isCompleted } : todo,
       )
 
       updateState(nextState)
